@@ -1,0 +1,308 @@
+* /*her şeyle ilgili*/
+{
+/*resetleme, değişik tarayıcılarda değişik görünümler için*/
+margin:0;
+padding:0;
+text-decoration: none;
+box-sizing: border-box; /*ekrandaki elemanların görünmesi kutulama*/
+font-family: Roboto;
+}
+html
+{
+	
+	font-size: 10px; /*bodyye de yazılabilir. fontları  ufaltma*/
+	 
+	 }
+body
+{
+	background-color: black;
+	color: white;
+	height: 100vh;  /*ekran yüksekliği*/
+	width: 100%;
+	overflow-x: hidden;/*kaymaları gizler*/
+
+	
+}
+
+header
+{
+	margin-top: 20px;
+	position: fixed;  /*sabitler*/
+	top: 0;
+	left: 0;
+	width: 100%;
+	padding: 1rem 10%;
+	display: flex;
+	justify-content: space-between; /*divleri saga sola(yatay) esnetme */
+	align-items: center;  /*yazıları dikey ortalama*/
+}
+
+.logo
+{
+	
+	font-size: 3rem;
+	color: #5050c4;
+	font-weight: 700;
+	cursor: pointer;
+	transition: 0.5s; /*efekt süresi, sayı arttıkça yavaş olur*/
+}
+
+.logo:hover
+{
+	transform: scale(1.1);  /*büyütme efekti*/
+}
+
+nav a
+{
+  font-size:1.7rem;
+  color: white;
+  font-weight: 500;
+  margin-left: 4rem;
+  transition: 0.3s ease;
+  border-bottom: 3px solid trasparent;
+
+}
+
+nav a:hover
+{
+	color: #5050c4;
+    border-bottom: 3px solid #5050c4;
+    background-color:black; 
+	
+}
+
+section
+{
+	min-height: 100vh; /*minimum yükseklik*/
+	padding: 5rem 10% 5rem;
+}
+
+.home
+{
+	display: flex;
+	justify-content:center; /*ortalama için*/
+	align-items: center;
+	gap:8rem; /*boşluk*/
+}
+
+.home-img img
+{
+  width: 25rem;
+  height: 35rem;
+  filter: black;
+-webkit-filter:grayscale(100%);
+}
+
+.home-content h1
+{
+	font-size: 5rem;
+	font-weight: 700;
+	line-height: 1.3; /*satır arası boşluk*/
+}
+
+.home-content h1 span
+{
+	color: #5050c4;
+}
+
+.home-content h3
+{
+	font-size: 4rem;
+	margin-bottom: 1rem;
+	font-weight: 700;
+}
+
+.home-content p
+{
+	font-size: 1.6rem;
+
+
+}
+
+.social-icons a 
+{
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 4rem;
+	height: 4rem;
+	font-size: 2.5rem;
+	color: #5050c4;
+	border:0.2rem solid #5050c4 ;
+	border-radius: 50%;
+	margin: 2.5rem 1.2rem 2.5rem 0rem;
+	transition: 0.3s ease;  /*efek verilecek elementler için gerekli*/
+}
+
+.social-icons a:hover
+{
+color: black;
+background-color:#5050c4;
+transform: scale(1.3) translateY(-5px);
+box-shadow:0 0 25px #5050c4;  /*gölge*/
+}
+
+.button
+{
+  display: inline-block;
+  border:2px solid #5050c4;
+  padding: 1rem 3rem;
+  font-size: 1.6rem;
+  background-color: black;
+  border-radius: 4rem;
+  color:#5050c4;
+  font-weight: 600;
+  letter-spacing: 0.3rem; /*harfler arası boşluk*/ 
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.button:hover
+{
+	background-color:#5050c4;
+	color: black;
+	transform: scale(1.1);
+	box-shadow:0 0 25px #5050c4;
+
+}
+.typing-text span
+{
+  position: relative; /*göreceli konum*/
+
+}
+
+.typing-text span::before   
+{
+	content:"Su Sayacı Okuyucusuyum"; /*span içine yazı koyuldu*/
+	color:#5050c4;
+	animation:words 20s infinite;  /* animasyon infinite sonsuz demek*/
+}
+.typing-text span::after
+{
+	content:"";
+	background-color: black;
+	position: absolute;/*mutlak konum*/
+	width: 100%;
+	height: 100%;
+	border-left: 1px solid black;
+	animation:kursor 0.6s infinite; 
+
+
+
+}
+
+
+
+/*animasyon tanımlama*/
+@keyframes words    
+{
+	0%,
+	25%
+	{
+
+		content:"Tahsildarım"; 
+	}
+	26%,
+	50%
+	{
+		content:"Saha Elemanıyım"; 
+	}
+	51%,
+	75%
+	{
+		content:"Teknikerim";
+	}
+	76%,
+	100%
+	{
+		content:"Sayac Okuyucusuyum"; 
+	}
+
+}
+
+@keyframes kursor
+{
+	to  /*dönüşüm renk dönüşümü*/
+	{
+       border-left: 3px solid #5050c4; 
+	}
+} 
+
+
+.filtered
+{   
+	position: relative;
+	filter:brightness(0.5) sepia(0.5) hue-rotate(45deg);
+	mix-blend-mode:difference;
+	width: 600px;
+	height: 600px;
+	opacity: 0.2;
+	filter: drop-shadow(15px 15px 10px black);
+	border:10px solid gray;
+	border-radius: 60px;
+	border-style: double;
+
+
+}
+ .filtered img
+ {
+ 	width: 100%;
+ 	height: 100%;
+ 	object-fit: cover;
+
+ }
+
+.kutu
+{
+	width: 25rem;
+	height: 40rem;
+	background-color: black;
+	position: relative;
+	filter: opacity(10%);
+	margin-left: 247px;
+	top:-482px;
+
+
+
+}
+
+.fan img
+{
+	width: 20px;
+	height: 20px;
+	margin-top: 7px;
+	margin-right:490px; 
+	 -webkit-animation:spin 4s linear infinite;
+    -moz-animation:spin 4s linear infinite;
+    animation:spin 4s linear infinite;
+
+
+}
+
+@-moz-keyframes spin { 
+    100% { -moz-transform: rotate(360deg); } 
+}
+@-webkit-keyframes spin { 
+    100% { -webkit-transform: rotate(360deg); } 
+}
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
+
+.cerceve
+{
+	position: relative;
+	right: 65px;
+
+	
+}
+
+.puf
+{
+	position: relative;
+	right: 50px;
+	
+}
+
